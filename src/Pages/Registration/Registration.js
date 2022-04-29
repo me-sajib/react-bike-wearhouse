@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SocialLogin from "../Shared/Social/SocialLogin";
 
 const Registration = () => {
   return (
     <div className="bg-dark form-body">
-      <div className="form-body">
+      <div className="form-body container">
         <div className="row">
           <div className="form-holder">
             <div className="form-content">
               <div className="form-items">
                 <h3>Registration</h3>
                 <form className="requires-validation">
-                  <div className="col-md-12">
+                  <div className="col-md-12 mb-3">
                     <input
                       className="form-control"
                       type="text"
@@ -21,7 +22,7 @@ const Registration = () => {
                     />
                   </div>
 
-                  <div className="col-md-12">
+                  <div className="col-md-12 mb-3">
                     <input
                       className="form-control"
                       type="email"
@@ -31,7 +32,7 @@ const Registration = () => {
                     />
                   </div>
 
-                  <div className="col-md-12">
+                  <div className="col-md-12 mb-3">
                     <input
                       className="form-control"
                       type="password"
@@ -65,6 +66,7 @@ const Registration = () => {
           </div>
         </div>
       </div>
+      <SocialLogin />
     </div>
   );
 };
