@@ -19,13 +19,13 @@ const Items = () => {
     <div className="items bg-dark py-5">
       <div className="container">
         {/* top of the text */}
-        <p className="text-center text-light py-2">
+        <div className="text-center text-light py-2">
           <span>DISCOVER THE</span>
           <h1>BEST BIKE</h1>
-        </p>
+        </div>
 
         {/* show the all items */}
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div className="row row-cols-1 row-cols-md-2 g-4">
           {/* spinner show */}
           {loading && <Spinner />}
           {items.map((item) => (
