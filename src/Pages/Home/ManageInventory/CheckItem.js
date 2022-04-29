@@ -72,10 +72,6 @@ const CheckItem = () => {
     <div className="bg-dark text-light py-5 checkItem">
       <div className="container">
         <div className="row mb-5">
-          {
-            /* loading spinner */
-            loading && <Spinner />
-          }
           <div className="col-md-12 col-lg-12 py-5 ">
             <h3 className="text-uppercase text-center">
               ADD <b className="text-primary">{item.name}</b> QUANTITY
@@ -99,6 +95,10 @@ const CheckItem = () => {
           </div>
         </div>
         <div className="row ">
+          {
+            /* loading spinner */
+            loading && <Spinner />
+          }
           <div className="col-md-12 col-lg-6">
             <div className="item-image">
               <img src={item.image} className="img-fluid" alt="" />
