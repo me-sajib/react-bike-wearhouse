@@ -4,6 +4,7 @@ const AddItem = () => {
   return (
     <div className="bg-dark text-light py-5">
       <div className="container">
+        <h2 className="text-center text-primary py-3">ADD ITEM</h2>
         <form>
           <div className="form-group mb-3">
             <label htmlFor="nameInput">Name</label>
@@ -32,7 +33,7 @@ const AddItem = () => {
               className="form-control"
               id="quantityInput"
               name="quantity"
-              placeholder="Enter item name"
+              placeholder="Enter item quantity"
             />
           </div>
           <div className="form-group mb-3">
@@ -47,9 +48,11 @@ const AddItem = () => {
           </div>
           <div className="form-group mb-3">
             <label htmlFor="details">Details Item</label>
+
             <textarea
               name="details"
               id="details"
+              className="form-control"
               placeholder="enter your item details"
             ></textarea>
           </div>
