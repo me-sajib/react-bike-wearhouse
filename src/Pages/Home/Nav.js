@@ -26,7 +26,22 @@ const Nav = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/" className="nav-link">
-                  Home
+                  HOME
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/login" className="nav-link">
+                  LOGIN
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/inventory" className="nav-link">
+                  MANAGE INVENTORY
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/addItem" className="nav-link">
+                  ADD ITEM
                 </Link>
               </li>
             </ul>
