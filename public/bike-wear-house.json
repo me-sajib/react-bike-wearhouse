@@ -1,0 +1,86 @@
+[
+  {
+    "name": "HERO XTREME",
+    "image": "https://www.heromotocorp.com/en-in/xtreme200s/images/specs-bike.png",
+    "description": "joint venture between India's largest bicycle manufacturing company Hero Cycles and Japanese motorcycle brand HONDA.",
+    "details": "The Xtreme 200s sports a stylish look, exudes a commanding presence and makes sure you always stay connected. It's where power and style meet to ensure you take over the city.",
+    "enginePower": "12.kw",
+    "RearTyre": "130mm",
+    "FrontDiscBrakes": "276mm",
+    "price": "Rs. 1,00,000",
+    "quantity": "1",
+    "supplier": "Hero Honda"
+  },
+  {
+    "name": "HERO XPULSE",
+    "image": "https://www.heromotocorp.com/en-in/xpulse200/images/specs-bike-med.png",
+    "description": "Take your adventures to the next level with a light-weight all-terrain motorcycle.... ",
+    "details": "Take your adventures to the next level with a light-weight all-terrain motorcycle that’s perfect for everyday rides as well as your action on the weekends. The Xpulse 200 is equipped with tech features as well!",
+    "enginePower": "13.kw",
+    "RearTyre": "120mm",
+    "FrontDiscBrakes": "19mm",
+    "price": "Rs. 12,00,000",
+    "quantity": "4",
+    "supplier": "Hero Honda"
+  },
+  {
+    "name": "HERO XPULSE 200T",
+    "image": "https://www.heromotocorp.com/en-in/xpulse200t/images/specs-bike-med.png",
+    "description": " urban, highways or rural, this is a modern bike.... ",
+    "details": "If the long road is where you belong this one is for you. Built for all roads – urban, highways or rural, this is a modern bike with a retro flavor that is also equipped with the best tech features.",
+    "enginePower": "13.3 kw",
+    "RearTyre": "130mm",
+    "FrontDiscBrakes": "14mm",
+    "price": "Rs. 11,00,000",
+    "quantity": "6",
+    "supplier": "Hero Honda"
+  },
+  {
+    "name": "pulsar-250",
+    "image": "https://images.carandbike.com/bike-images/gallery/bajaj/pulsar-n250/exterior/bajaj-pulsar-n250-style-look.webp?v=2021-11-01",
+    "description": "Dynamic interplay of premium metallised dual colours. Darker in the front and lighter towards the rear....",
+    "details": "Never run out of juice. A wide torque band offers 85% of peak power over a wider rev range-than other motorcycles in the segment.",
+    "enginePower": "13.3 kw",
+    "RearTyre": "130mm",
+    "FrontDiscBrakes": "14mm",
+    "price": "Rs.  1,43,680",
+    "quantity": "6",
+    "supplier": "Pulsar"
+  },
+  {
+    "name": "GIXXER 155CC",
+    "image": "https://www.suzuki.com.bd/images/bike_models/variant_color_images/variant_color_image__154331566616805.png",
+    "description": "Here is the latest version of your favorite street sport bike with the same engine specifications ....",
+    "details": "Here is the latest version of your favorite street sport bike with the same engine specifications and engine test as the Gixxer. With its new advanced Disc-Brake, it promises a really fabulous, more stable and more confident riding experience on all kinds of terrain.",
+    "enginePower": "15.3 kw",
+    "RearTyre": "133mm",
+    "FrontDiscBrakes": "15mm",
+    "price": "Rs.  1,85,680",
+    "quantity": "6",
+    "supplier": "Suzuki"
+  },
+  {
+    "name": "NEW GIXXER SF",
+    "image": "https://www.suzuki.com.bd/images/bike_models/variant_color_images/variant_color_image__162419216230992.png",
+    "description": "The All-New Gixxer SF 155, from the makers of Hayabusa and GSX-R, comes the latest from a lineage of legends. The generational update makes the Suzuki Gixxer...",
+    "details": "The All-New Gixxer SF 155, from the makers of Hayabusa and GSX-R, comes the latest from a lineage of legends. The generational update makes the Suzuki Gixxer SF look more premium and sportier than before. It gets edgier styling, clip-on handlebars, and a split seat to complete the effect. The Suzuki Gixxer SF has impressive quality and fit and finish levels. It comes in three colors: Glass Sparkle Black, Mira Red, and the 100 Years Anniversary Edition comes with Solitary Silver",
+    "enginePower": "17.3 kw",
+    "RearTyre": "144mm",
+    "FrontDiscBrakes": "18mm",
+    "price": "Rs.  2,65,130",
+    "quantity": "4",
+    "supplier": "Gixxer"
+  },
+  {
+    "name": "GIXXER 155CC",
+    "image": "https://www.suzuki.com.bd/images/bike_models/variant_color_images/variant_color_image__154331566616805.png",
+    "description": "Here is the latest version of your favorite street sport bike with the same engine specifications and engine test as the Gixxer. With its new advanced Disc-Brake...",
+    "details": "Here is the latest version of your favorite street sport bike with the same engine specifications and engine test as the Gixxer. With its new advanced Disc-Brake, it promises a really fabulous, more stable and more confident riding experience on all kinds of terrain. Another addition Gixxer Monotone Classic Plus comes with two varients",
+    "enginePower": "11.3 kw",
+    "RearTyre": "111mm",
+    "FrontDiscBrakes": "12mm",
+    "price": "Rs.  1,65,130",
+    "quantity": "8",
+    "supplier": "Gixxer"
+  }
+]
