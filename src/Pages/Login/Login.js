@@ -9,7 +9,7 @@ const Login = () => {
         <div className="row w-75 mx-auto">
           <h3>Login</h3>
           <form className="form-user">
-            <div className="col-md-12">
+            <div className="col-md-12 mb-3">
               <input
                 className="form-control"
                 type="email"
@@ -19,7 +19,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="col-md-12">
+            <div className="col-md-12 mb-3">
               <input
                 className="form-control"
                 type="password"
@@ -35,7 +35,7 @@ const Login = () => {
               </button>
             </div>
             <div className="already-login text-light">
-              don't have an account?{" "}
+              Don't have an account?{" "}
               <Link to="/registration">registration now </Link>
             </div>
           </form>
