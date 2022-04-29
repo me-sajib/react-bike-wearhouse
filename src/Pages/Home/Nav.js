@@ -1,12 +1,14 @@
 import React from "react";
+import bike from "./images/logo-bike.png";
+import "./css/Nav.css";
 
 const Nav = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="/">
-            Navbar
+          <a class="navbar-brand bike-logo" href="/">
+            <img src={bike} alt="" className="img-fluid logo" />
           </a>
           <button
             class="navbar-toggler"
