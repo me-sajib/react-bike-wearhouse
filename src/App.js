@@ -1,9 +1,13 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import AddItem from "./Pages/AddItem/AddItem";
 import Home from "./Pages/Home/Home";
 import CheckItem from "./Pages/Home/ManageInventory/CheckItem";
 import Nav from "./Pages/Home/Nav";
+import Login from "./Pages/Login/Login";
+import ManageInventory from "./Pages/ManageInventory/ManageInventory";
+import Registration from "./Pages/Registration/Registration";
 
 function App() {
   return (
@@ -12,6 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/checkItem/:id" element={<CheckItem />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/inventory" element={<ManageInventory />} />
+        <Route path="/addItem" element={<AddItem />} />
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>
       <Toaster />
