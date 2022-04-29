@@ -1,20 +1,20 @@
 import React from "react";
 import "./css/Inventory.css";
 
-const Inventory = ({ item, id }) => {
-  const { name, price, quantity, description, supplier, image, _id } = item;
+const Inventory = ({ item, id, deleteItem }) => {
+  const { name, price, _id } = item;
   return (
     <tr>
       <th scope="row">{id++}</th>
       <td>{name}</td>
       <td>{price}</td>
-      <td>{quantity}</td>
-      <td>{description.slice(0, 70) + "..."}</td>
-      <td>{supplier}</td>
+
       <td>
-        <img src={image} className="img-fluid table-image" alt="" />
+        <button className="btn btn-danger" onClick={() => deleteItem(_id)}>
+          {" "}
+          <i className="fa-solid fa-trash-can"></i>{" "}
+        </button>
       </td>
-      <td>delete</td>
     </tr>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Spinner from "../Shared/Spinner";
 import Inventory from "./Inventory";
@@ -9,7 +10,7 @@ const ManageInventory = () => {
 
   // load data from API
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("http://localhost:5000/allInventory")
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -17,6 +18,28 @@ const ManageInventory = () => {
       });
   }, []);
   let id = 1;
+
+  // delete item from API
+  const deleteItem = (id) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
+    if (confirm) {
+      fetch(`http://localhost:5000/inventory/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setItems(items.filter((item) => item._id !== id));
+          if (data.insertedCount === 0) {
+            toast.error("Item not found");
+          } else {
+            toast.success("Item deleted");
+          }
+        });
+    }
+  };
+
   return (
     <div className="bg-dark">
       <div className="container text-light py-5">
@@ -24,32 +47,34 @@ const ManageInventory = () => {
           {" "}
           add new item
         </Link>
-        <table class="table table-light mt-3 table-striped table-responsive table-bordered">
+
+        <table className="table table-light mx-auto mt-3 table-striped table-responsive table-bordered">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">NAME</th>
               <th scope="col">PRICE</th>
-              <th scope="col">QUANTITY</th>
-              <th scope="col">DESCRIPTION</th>
-              <th scope="col">SPILLER</th>
-              <th scope="col">IMG</th>
               <th scope="col">action</th>
             </tr>
           </thead>
           <tbody className="table-hover">
             {
-              //    if loading is true, show spinner
-              loading && <Spinner />
-            }
-            {
               //    show all inventory
               items.map((item) => (
-                <Inventory key={item._id} id={id++} item={item} />
+                <Inventory
+                  key={item._id}
+                  id={id++}
+                  deleteItem={deleteItem}
+                  item={item}
+                />
               ))
             }
           </tbody>
         </table>
+        {
+          //    if loading is true, show spinner
+          loading && <Spinner />
+        }
       </div>
     </div>
   );
