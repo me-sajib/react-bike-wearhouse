@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
-  const { name, image, description } = item;
+  const { _id, name, image, description } = item;
+
   return (
     <div class="col">
       <div class="card">
@@ -9,7 +11,9 @@ const Item = ({ item }) => {
         <div class="card-body">
           <h5 class="card-title">{name}</h5>
           <p class="card-text">{description}</p>
-          <button className="btn btn-dark">update</button>
+          <Link to={`/checkItem/${_id}`} class="btn btn-primary">
+            UPDATE
+          </Link>
         </div>
       </div>
     </div>

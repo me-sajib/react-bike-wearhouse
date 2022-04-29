@@ -1,6 +1,7 @@
 import React from "react";
 import bike from "./images/logo-bike.png";
 import "./css/Nav.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -24,9 +25,9 @@ const Nav = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+                <Link to="/" className="nav-link">
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
