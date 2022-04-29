@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
@@ -13,6 +14,7 @@ function App() {
         <Route path="/checkItem/:id" element={<CheckItem />} />
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
