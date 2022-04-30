@@ -25,7 +25,7 @@ const Items = () => {
         </div>
 
         {/* show the all items */}
-        <div className="row row-cols-1 row-cols-md-2 g-4">
+        <div className="row row-cols-1 my-5 row-cols-md-2 g-4">
           {/* spinner show */}
           {loading && <Spinner />}
           {items.map((item) => (
