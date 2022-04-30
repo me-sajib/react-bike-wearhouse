@@ -22,6 +22,18 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
+    fetch("http://localhost:5000/addToken/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // save token to local storage
+        localStorage.setItem("token", data.token);
+      });
   };
 
   useEffect(() => {
