@@ -1,4 +1,5 @@
 import React from "react";
+import BikeRating from "../BikeRating/BikeRating";
 import Banner from "./Banner";
 import Items from "./Items";
 
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Banner />
       <Items />
+      <BikeRating />
     </div>
   );
 };
