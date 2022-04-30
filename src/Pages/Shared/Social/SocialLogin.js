@@ -28,9 +28,13 @@ const SocialLogin = () => {
           <div className="hr-row mt-3"></div>
         </div>
 
-        {/* social button */}
+        {
+          // if loading show spinner
+          loading && <Spinner />
+
+          /* social button */
+        }
         <div className="d-flex py-5 justify-content-center">
-          {loading && <Spinner />}
           <div className="mx-2">
             <button
               className="btn btn-primary"
