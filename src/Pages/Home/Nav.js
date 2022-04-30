@@ -2,8 +2,13 @@ import React from "react";
 import bike from "./images/logo-bike.png";
 import "./css/Nav.css";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Nav = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,21 +34,41 @@ const Nav = () => {
                   HOME
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  LOGIN
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/inventory" className="nav-link">
-                  MANAGE INVENTORY
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/addItem" className="nav-link">
-                  ADD ITEM
-                </Link>
-              </li>
+              {user ? (
+                <>
+                  <li className="nav-item">
+                    <Link to="/inventory" className="nav-link">
+                      MANAGE INVENTORY
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/myItem" className="nav-link">
+                      MY ITEM
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/addItem" className="nav-link">
+                      ADD ITEM
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      className="nav-link btn btn-link"
+                      onClick={() => signOut(auth)}
+                    >
+                      LOGOUT
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link">
+                      LOGIN
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
