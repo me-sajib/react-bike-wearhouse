@@ -1,18 +1,57 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+  const email = user.email;
+  const addBike = (e) => {
+    e.preventDefault();
+    const name = e.target.bikeName.value;
+    const price = e.target.price.value;
+    const quantity = e.target.quantity.value;
+    const description = e.target.description.value;
+    const details = e.target.details.value;
+    const image = e.target.image.value;
+    const supplier = e.target.supplier.value;
+
+    const item = {
+      name,
+      price,
+      quantity,
+      description,
+      details,
+      image,
+      supplier,
+      email,
+    };
+
+    fetch("http://localhost:5000/addItemByUser", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Item added successfully");
+        e.target.reset();
+      });
+  };
   return (
     <div className="bg-dark text-light py-5">
       <div className="container">
         <h2 className="text-center text-primary py-3">ADD ITEM</h2>
-        <form>
+        <form onSubmit={addBike}>
           <div className="form-group mb-3">
             <label htmlFor="nameInput">Name</label>
             <input
               type="text"
               className="form-control"
               id="nameInput"
-              name="name"
+              name="bikeName"
               placeholder="Enter item name"
             />
           </div>
@@ -42,7 +81,7 @@ const AddItem = () => {
               type="text"
               className="form-control"
               id="Description"
-              name="name"
+              name="description"
               placeholder="Enter item Description"
             />
           </div>
