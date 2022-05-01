@@ -41,10 +41,6 @@ const Registration = () => {
     await createUserWithEmailAndPassword(email, password, {
       sendEmailVerification: true,
     });
-
-    if (user) {
-      return toast.success("Account created successfully");
-    }
   };
   useEffect(() => {
     if (user) {
