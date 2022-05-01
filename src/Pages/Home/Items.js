@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../Shared/Spinner";
 import Item from "./Item";
+import { Link } from "react-router-dom";
 
 const Items = () => {
   const [items, setItems] = useState([]);
@@ -32,6 +33,9 @@ const Items = () => {
             <Item key={item._id} item={item} />
           ))}
         </div>
+        <Link to="/inventory" className="btn btn-link text-light">
+          SHOW ALL ITEMS
+        </Link>
       </div>
     </div>
   );
