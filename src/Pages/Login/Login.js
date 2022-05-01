@@ -42,10 +42,12 @@ const Login = () => {
     }
   }, [user]);
   return (
-    <div className="bg-dark form-body">
+    <div className="bg-dark form-body light-border">
       <div className=" container">
-        <div className="row w-75 mx-auto">
-          <h3>Login</h3>
+        <div className="row w-75 mx-auto py-5">
+          <h3 className="text-white pb-3">
+            WELCOME BACK, <b className="text-primary">PLEASE LOGIN</b>
+          </h3>
           <form className="form-user" onSubmit={loginUser}>
             <div className="col-md-12 mb-3">
               <input
