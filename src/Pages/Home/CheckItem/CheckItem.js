@@ -73,12 +73,10 @@ const CheckItem = () => {
       <div className="container">
         <div className="row mb-5">
           <div className="col-md-12 col-lg-12 py-5 ">
-            <h3 className="text-uppercase text-center">
-              ADD <b className="text-primary">{item.name}</b> QUANTITY
-            </h3>
+            <h3 className="text-uppercase text-center">Restock the items</h3>
             <form className="w-50 mx-auto" onSubmit={increaseQuantity}>
               <div className="form-group mb-3">
-                <label htmlFor="quantity">Quantity</label>
+                <label htmlFor="quantity">quantity</label>
                 <input
                   type="number"
                   className="form-control"
