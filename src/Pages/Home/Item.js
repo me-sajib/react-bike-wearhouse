@@ -6,7 +6,11 @@ const Item = ({ item }) => {
   const { _id, name, image, supplier, price, description, quantity } = item;
 
   return (
-    <div className="col text-light">
+    <div
+      className="col text-light"
+      data-aos="fade-right"
+      data-aos-duration="2000"
+    >
       <div className="card">
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
