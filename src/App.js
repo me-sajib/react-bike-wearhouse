@@ -10,6 +10,7 @@ import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import UserItems from "./Pages/UserItem/UserItems";
 import PrivateAuth from "./Pages/PrivateAuth/PrivateAuth";
 import Registration from "./Pages/Registration/Registration";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>
       <Toaster />
+      <Footer />
     </div>
   );
 }
