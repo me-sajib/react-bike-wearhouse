@@ -1,5 +1,7 @@
 import React from "react";
 import "./css/BikeRating.css";
+import CountUp from "react-countup";
+
 const BikeRating = () => {
   return (
     <div className="bike-rating ">
@@ -9,25 +11,43 @@ const BikeRating = () => {
             <div className="col">
               <div className="">
                 <h2>
-                  <i class="fa-solid fa-user"></i>
+                  <i className="fa-solid fa-user"></i>
                 </h2>
-                <h1>30+</h1>
+                <CountUp start={0} end={30} delay={0}>
+                  {({ countUpRef }) => (
+                    <h1>
+                      <span ref={countUpRef} />+
+                    </h1>
+                  )}
+                </CountUp>
               </div>
             </div>
             <div className="col">
               <div className="">
                 <h2>
-                  <i class="fa-solid fa-users"></i>
+                  <i className="fa-solid fa-users"></i>
                 </h2>
-                <h1>9000+</h1>
+                <CountUp start={0} end={9000} delay={0}>
+                  {({ countUpRef }) => (
+                    <h1>
+                      <span ref={countUpRef} />+
+                    </h1>
+                  )}
+                </CountUp>
               </div>
             </div>
             <div className="col">
               <div className="">
                 <h1>
-                  <i class="fa-solid fa-motorcycle"></i>
+                  <i className="fa-solid fa-motorcycle"></i>
                 </h1>
-                <h2>300+</h2>
+                <CountUp start={0} end={400} delay={0}>
+                  {({ countUpRef }) => (
+                    <h1>
+                      <span ref={countUpRef} />
+                    </h1>
+                  )}
+                </CountUp>
               </div>
             </div>
           </div>
