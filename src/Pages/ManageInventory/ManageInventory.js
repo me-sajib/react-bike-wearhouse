@@ -41,7 +41,7 @@ const ManageInventory = () => {
   };
 
   return (
-    <div className="bg-dark">
+    <div className="bg-dark light-border">
       <div className="container text-light py-5">
         <Link to="/addItem" className="btn btn-primary">
           {" "}
