@@ -1,7 +1,10 @@
+import axios from "axios";
+import { sendEmailVerification } from "firebase/auth";
 import React, { useEffect } from "react";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
 } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,9 +14,12 @@ import Spinner from "../Shared/Spinner";
 
 const Registration = () => {
   const [alreadyUser] = useAuthState(auth);
+
+  // email and password for sign up state
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-
+  // send email verification to user
+  const [sendEmailVerification, sending] = useSendEmailVerification(auth);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -38,9 +44,15 @@ const Registration = () => {
       return toast.error("Passwords do not match");
     }
 
-    await createUserWithEmailAndPassword(email, password, {
-      sendEmailVerification: true,
+    // email verification link send
+
+    await createUserWithEmailAndPassword(email, password);
+    await sendEmailVerification();
+    const { data } = await axios.post("http://localhost:5000/addToken", {
+      email,
     });
+    // console.log(data);
+    localStorage.setItem("token", data.token);
   };
   useEffect(() => {
     if (user) {
