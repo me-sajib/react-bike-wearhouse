@@ -19,6 +19,18 @@ const AddItem = () => {
       const image = e.target.image.value;
       const supplier = e.target.supplier.value;
 
+      if (
+        email === "" ||
+        name === "" ||
+        price === "" ||
+        quantity === "" ||
+        description === "" ||
+        details === "" ||
+        image === "" ||
+        supplier === ""
+      ) {
+        return toast.error("Please fill all fields");
+      }
       const item = {
         name,
         price,
@@ -45,7 +57,7 @@ const AddItem = () => {
     }
   };
   return (
-    <div className="bg-dark text-light py-5">
+    <div className="bg-dark text-light py-5 light-border">
       <div className="container">
         <h2 className="text-center text-primary py-3">ADD ITEM</h2>
         <form onSubmit={addBike}>
