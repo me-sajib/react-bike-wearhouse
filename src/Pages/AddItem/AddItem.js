@@ -5,40 +5,44 @@ import auth from "../../firebase.init";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
-  const email = user.email;
+
   const addBike = (e) => {
     e.preventDefault();
-    const name = e.target.bikeName.value;
-    const price = e.target.price.value;
-    const quantity = e.target.quantity.value;
-    const description = e.target.description.value;
-    const details = e.target.details.value;
-    const image = e.target.image.value;
-    const supplier = e.target.supplier.value;
 
-    const item = {
-      name,
-      price,
-      quantity,
-      description,
-      details,
-      image,
-      supplier,
-      email,
-    };
+    if (user) {
+      const email = user.email;
+      const name = e.target.bikeName.value;
+      const price = e.target.price.value;
+      const quantity = e.target.quantity.value;
+      const description = e.target.description.value;
+      const details = e.target.details.value;
+      const image = e.target.image.value;
+      const supplier = e.target.supplier.value;
 
-    fetch("http://localhost:5000/addItemByUser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success("Item added successfully");
-        e.target.reset();
-      });
+      const item = {
+        name,
+        price,
+        quantity,
+        description,
+        details,
+        image,
+        supplier,
+        email,
+      };
+
+      fetch("http://localhost:5000/addItemByUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Item added successfully");
+          e.target.reset();
+        });
+    }
   };
   return (
     <div className="bg-dark text-light py-5">
@@ -58,7 +62,7 @@ const AddItem = () => {
           <div className="form-group mb-3">
             <label htmlFor="priceInput">Price</label>
             <input
-              type="number"
+              type="text"
               className="form-control"
               id="priceInput"
               name="price"
