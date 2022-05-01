@@ -55,13 +55,13 @@ const Registration = () => {
   }, [alreadyUser]);
 
   return (
-    <div className="bg-dark form-body">
+    <div className="bg-dark form-body light-border">
       <div className="form-body container">
         <div className="row">
           <div className="form-holder">
             <div className="form-content">
-              <div className="form-items">
-                <h3>Registration</h3>
+              <div className="form-items py-5">
+                <h3 className="text-white pb-3">Registration</h3>
                 <form
                   className="requires-validation"
                   onSubmit={registrationUser}
