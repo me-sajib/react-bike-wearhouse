@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import SocialLogin from "../Shared/Social/SocialLogin";
@@ -11,8 +13,13 @@ import Spinner from "../Shared/Spinner";
 import "./css/Login.css";
 const Login = () => {
   const [alreadyUser] = useAuthState(auth);
+  // sign in email and password state
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  // reset password email send state
+  const [sendPasswordResetEmail, sending, errors] =
+    useSendPasswordResetEmail(auth);
+  // navigate to the page
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -41,6 +48,7 @@ const Login = () => {
       navigate(from, { replace: true });
     }
   }, [user]);
+
   return (
     <div className="bg-dark form-body light-border">
       <div className=" container">
@@ -78,6 +86,71 @@ const Login = () => {
                 LOGIN
               </button>
             </div>
+            {/* forgat password modal add */}
+            <button
+              type="button"
+              className="btn btn-link"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              forgat password?
+            </button>
+
+            <div
+              className="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                {/* success and spinner show */}
+                {sending && <Spinner />}
+
+                <div className="modal-content bg-dark text-light">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">
+                      Enter your email address
+                    </h5>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      placeholder="enter your email"
+                    />
+                    {
+                      // if any error
+                      errors && (
+                        <div className="alert alert-danger">
+                          {errors.message}
+                        </div>
+                      )
+                    }
+                    <button type="submit" className="btn btn-primary mt-2">
+                      send code
+                    </button>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="already-login text-light">
               Don't have an account?{" "}
               <Link to="/registration">registration now </Link>
