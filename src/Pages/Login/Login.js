@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useAuthState,
   useSendPasswordResetEmail,
@@ -12,6 +12,8 @@ import SocialLogin from "../Shared/Social/SocialLogin";
 import Spinner from "../Shared/Spinner";
 import "./css/Login.css";
 const Login = () => {
+  const [email, setEmail] = useState("");
+
   const [alreadyUser] = useAuthState(auth);
   // sign in email and password state
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -122,7 +124,8 @@ const Login = () => {
                   <div className="modal-body">
                     <input
                       type="email"
-                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="form-control"
                       placeholder="enter your email"
                     />
@@ -134,7 +137,14 @@ const Login = () => {
                         </div>
                       )
                     }
-                    <button type="submit" className="btn btn-primary mt-2">
+                    <button
+                      onClick={async () => {
+                        await sendPasswordResetEmail(email);
+                        toast.success("send reset password email");
+                        setEmail("");
+                      }}
+                      className="btn btn-primary mt-2"
+                    >
                       send code
                     </button>
                   </div>
