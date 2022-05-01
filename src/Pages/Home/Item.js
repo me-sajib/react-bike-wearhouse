@@ -11,7 +11,7 @@ const Item = ({ item }) => {
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
+          <p className="card-text">{description.slice(0, 80) + "..."}</p>
           <p className="card-text">
             <b> price:</b>
             <i> {price}</i>
