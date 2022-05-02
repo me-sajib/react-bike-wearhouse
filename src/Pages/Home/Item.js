@@ -28,7 +28,7 @@ const Item = ({ item }) => {
             <b>Quantity:</b> {quantity}
           </p>
           <Link to={`/checkItem/${_id}`} className="btn btn-primary">
-            UPDATE
+            STOCK UPDATE
           </Link>
         </div>
       </div>
