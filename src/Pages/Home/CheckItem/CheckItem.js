@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Spinner from "../../Shared/Spinner";
 import "./css/CheckItem.css";
 
@@ -123,7 +123,7 @@ const CheckItem = () => {
                 <b>SPILLER: </b>
                 {item.supplier}
               </p>
-              <div className="text-end">
+              <div className="d-flex justify-content-between">
                 {
                   //   if quantity is greater than 0 or more then 0
                   quantity > 0 ? (
@@ -139,6 +139,10 @@ const CheckItem = () => {
                     </button>
                   )
                 }
+
+                <Link to="/inventory" className="btn btn-primary">
+                  Manage Inventories
+                </Link>
               </div>
             </div>
           </div>
