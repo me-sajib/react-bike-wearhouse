@@ -7,6 +7,7 @@ import "./css/CheckItem.css";
 const CheckItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState([]);
+  const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,6 +15,7 @@ const CheckItem = () => {
       .then((res) => res.json())
       .then((data) => {
         setItem(data[0]);
+        setQuantity(data[0].quantity);
         setLoading(false);
       });
   }, [item]);
@@ -40,7 +42,7 @@ const CheckItem = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          setItem(data);
+          setQuantity(data.quantity);
           // show toast
           toast.success("Quantity updated");
           //   empty the input
@@ -63,7 +65,7 @@ const CheckItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setItem(data);
+        setQuantity(data.quantity);
         toast.success("Item delivered");
       });
   };
@@ -115,7 +117,7 @@ const CheckItem = () => {
               </p>
               <p>
                 <b>QUANTITY: </b>
-                {item.quantity}
+                {quantity}
               </p>
               <p>
                 <b>SPILLER: </b>
