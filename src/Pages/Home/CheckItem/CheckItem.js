@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
+import auth from "../../../firebase.init";
 import Spinner from "../../Shared/Spinner";
 import "./css/CheckItem.css";
 
 const CheckItem = () => {
+  const [user, loadings] = useAuthState(auth);
   const { id } = useParams();
   const [item, setItem] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setItem(data[0]);
-        setQuantity(data[0].quantity);
-        setLoading(false);
-      });
+    if (user) {
+      fetch(`https://young-springs-26281.herokuapp.com/inventory/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setItem(data[0]);
+          setQuantity(data[0].quantity);
+          setLoading(false);
+        });
+    }
   }, [item]);
 
   //   increase quantity
@@ -31,15 +36,18 @@ const CheckItem = () => {
       toast.error("Please enter a valid quantity");
     } else if (quantity > 0) {
       //  update quantity
-      fetch(`http://localhost:5000/inventory/addQuantity/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          quantity: parseInt(quantity),
-        }),
-      })
+      fetch(
+        `https://young-springs-26281.herokuapp.com/inventory/addQuantity/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            quantity: parseInt(quantity),
+          }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setQuantity(data.quantity);
@@ -100,7 +108,7 @@ const CheckItem = () => {
         <div className="row ">
           {
             /* loading spinner */
-            loading && <Spinner />
+            (loading || loadings) && <Spinner />
           }
           <div className="col-md-12 col-lg-6">
             <div className="item-image">

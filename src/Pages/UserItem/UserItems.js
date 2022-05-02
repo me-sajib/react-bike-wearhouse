@@ -17,7 +17,7 @@ const MyItem = () => {
     async function getItem() {
       try {
         if (user?.email) {
-          const uri = `http://localhost:5000/userItem/${user.email}`;
+          const uri = `https://young-springs-26281.herokuapp.com/userItem/${user.email}`;
           const { data } = await axios.get(uri, {
             headers: {
               authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -39,7 +39,7 @@ const MyItem = () => {
     );
     if (confirm) {
       try {
-        const uri = `http://localhost:5000/inventory/${id}`;
+        const uri = `https://young-springs-26281.herokuapp.com/inventory/${id}`;
         const { data } = await axios.delete(uri, {
           headers: {
             authorization: `Bearer ${localStorage.getItem("token")}`,
