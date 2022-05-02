@@ -54,15 +54,18 @@ const CheckItem = () => {
   //   mines quantity
 
   const delivery = (id) => {
-    fetch(`http://localhost:5000/inventory/delivery/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        delivery: true,
-      }),
-    })
+    fetch(
+      `https://young-springs-26281.herokuapp.com/inventory/delivery/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          delivery: true,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setQuantity(data.quantity);
