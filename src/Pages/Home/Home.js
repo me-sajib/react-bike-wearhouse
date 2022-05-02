@@ -1,5 +1,5 @@
 import React from "react";
-import BikeRating from "../BikeRating/BikeRating";
+import ServiceDetails from "../ServiceDetails/ServiceDetails";
 import TopSeller from "../TopSeller/TopSeller";
 import Banner from "./Banner";
 import Items from "./Items";
@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Banner />
       <Items />
-      <BikeRating />
+      <ServiceDetails />
       <TopSeller />
     </div>
   );
