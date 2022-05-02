@@ -34,7 +34,9 @@ const Items = () => {
           ))}
         </div>
         <Link to="/inventory" className="btn btn-link text-light">
-          SHOW ALL ITEMS
+          <Link to="/inventory" className="btn btn-primary">
+            Manage Inventories
+          </Link>
         </Link>
       </div>
     </div>
