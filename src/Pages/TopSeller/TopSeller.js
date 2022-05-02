@@ -5,7 +5,7 @@ const TopSeller = () => {
   return (
     <div className="bg-dark text-center py-5 text-white">
       <div className="container">
-        <h1>BEST SELLER</h1>
+        <h1>TOP SELLER</h1>
 
         <div className="row row-cols-1 row-cols-md-4 mt-5 py-2">
           {/* first seller */}
