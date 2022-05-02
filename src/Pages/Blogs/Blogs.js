@@ -14,19 +14,23 @@ const Blogs = () => {
               programming language. it's a runtime environment that's used to
               run JavaScript outside the browser.
             </p>
-          </div>
-          <div className="col">
-            <h3>When should you use nodejs and when should you use mongodb</h3>
             <p>
+              {" "}
               Node.js is primarily used for non-blocking, event-driven servers,
               due to its single-threaded nature. It's used for traditional web
               sites and back-end API services, but was designed with real-time,
               push-based architectures in mind. API application with both
-              relational and non-relational databases. Due to the event-driven
-              and asynchronous nature, Node.js is good at building real-time
-              applications like messaging, notifications delivery, live
-              streaming and collaboration tools. Node.js assigns I/O tasks to
-              the internal IO threads without blocking the main thread.
+              relational and non-relational databases.
+            </p>
+          </div>
+          <div className="col">
+            <h3>When should you use nodejs and when should you use mongodb</h3>
+            <p>
+              Due to the event-driven and asynchronous nature, Node.js is good
+              at building real-time applications like messaging, notifications
+              delivery, live streaming and collaboration tools. Node.js assigns
+              I/O tasks to the internal IO threads without blocking the main
+              thread.
             </p>
             <p>
               Using MongoDB can provide many benefits to a software development
