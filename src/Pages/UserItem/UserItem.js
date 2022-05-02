@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserItem = ({ item }) => {
+const UserItem = ({ item, deleteItem }) => {
   const { _id, name, image, supplier, price, description, quantity } = item;
   return (
     <div className="col text-light">
@@ -20,6 +20,10 @@ const UserItem = ({ item }) => {
           <p className="cart-text">
             <b>Quantity:</b> {quantity}
           </p>
+          {/* delete item button */}
+          <button className="btn btn-danger" onClick={() => deleteItem(_id)}>
+            DELETE
+          </button>
         </div>
       </div>
     </div>
