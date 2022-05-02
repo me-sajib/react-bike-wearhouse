@@ -32,9 +32,12 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/addToken", {
-      email,
-    });
+    const { data } = await axios.post(
+      "https://young-springs-26281.herokuapp.com/addToken",
+      {
+        email,
+      }
+    );
     // console.log(data);
     localStorage.setItem("token", data.token);
   };

@@ -42,7 +42,7 @@ const AddItem = () => {
         email,
       };
 
-      fetch("http://localhost:5000/addItemByUser", {
+      fetch("https://young-springs-26281.herokuapp.com/addItemByUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

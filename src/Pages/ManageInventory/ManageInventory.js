@@ -10,7 +10,7 @@ const ManageInventory = () => {
 
   // load data from API
   useEffect(() => {
-    fetch("http://localhost:5000/allInventory")
+    fetch("https://young-springs-26281.herokuapp.com/allInventory")
       .then((res) => res.json())
       .then((data) => {
         setItems(data);

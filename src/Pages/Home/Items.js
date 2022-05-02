@@ -9,7 +9,7 @@ const Items = () => {
 
   // load data from API
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://young-springs-26281.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => {
         setItems(data);

@@ -52,9 +52,12 @@ const Registration = () => {
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     await sendEmailVerification();
-    const { data } = await axios.post("http://localhost:5000/addToken", {
-      email,
-    });
+    const { data } = await axios.post(
+      "https://young-springs-26281.herokuapp.com/addToken",
+      {
+        email,
+      }
+    );
     // console.log(data);
     localStorage.setItem("token", data.token);
   };
