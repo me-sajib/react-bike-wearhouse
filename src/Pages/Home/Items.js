@@ -33,10 +33,9 @@ const Items = () => {
             <Item key={item._id} item={item} />
           ))}
         </div>
-        <Link to="/inventory" className="btn btn-link text-light">
-          <Link to="/inventory" className="btn btn-primary">
-            Manage Inventories
-          </Link>
+
+        <Link to="/inventory" className="btn btn-primary">
+          Manage Inventories
         </Link>
       </div>
     </div>
