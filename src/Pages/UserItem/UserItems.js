@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import auth from "../../firebase.init";
-import Item from "../Home/Item";
 import Spinner from "../Shared/Spinner";
 import "./css/UserItem.css";
+import UserItem from "./UserItem";
 
 const MyItem = () => {
   const [items, setItems] = useState([]);
@@ -32,6 +33,28 @@ const MyItem = () => {
     setLoading(false);
   }, [loading]);
 
+  const deleteItem = async (id) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
+    if (confirm) {
+      try {
+        const uri = `http://localhost:5000/inventory/${id}`;
+        const { data } = await axios.delete(uri, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        if (data.deletedCount === 1) {
+          setItems(items.filter((item) => item._id !== id));
+          toast.success("Item deleted successfully");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <div className="bg-dark my-item py-5 light-border">
       <div className="container">
@@ -52,7 +75,9 @@ const MyItem = () => {
           )}
           <div className="row row-cols-1 my-5 row-cols-md-2 g-4">
             {items.length > 0 &&
-              items.map((item) => <Item key={item._id} item={item} />)}
+              items.map((item) => (
+                <UserItem key={item._id} deleteItem={deleteItem} item={item} />
+              ))}
           </div>
         </div>
       </div>
