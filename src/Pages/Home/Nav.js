@@ -75,6 +75,9 @@ const Nav = () => {
                 </>
               )}
             </ul>
+            <div className="text-right text-white">
+              {user?.displayName && "welcome " + user.displayName}
+            </div>
           </div>
         </div>
       </nav>
