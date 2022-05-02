@@ -25,7 +25,7 @@ const ManageInventory = () => {
       "Are you sure you want to delete this item?"
     );
     if (confirm) {
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://young-springs-26281.herokuapp.com/inventory/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
