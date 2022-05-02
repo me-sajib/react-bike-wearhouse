@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/BikeRating.css";
+import "./css/ServiceDetails.css";
 import CountUp from "react-countup";
 
 const ServiceDetails = () => {
