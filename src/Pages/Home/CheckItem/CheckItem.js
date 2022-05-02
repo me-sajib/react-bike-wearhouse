@@ -124,12 +124,21 @@ const CheckItem = () => {
                 {item.supplier}
               </p>
               <div className="text-end">
-                <button
-                  className="btn btn-info"
-                  onClick={() => delivery(item._id)}
-                >
-                  DELIVERED
-                </button>
+                {
+                  //   if quantity is greater than 0 or more then 0
+                  quantity > 0 ? (
+                    <button
+                      className="btn btn-info"
+                      onClick={() => delivery(item._id)}
+                    >
+                      DELIVERED
+                    </button>
+                  ) : (
+                    <button className="btn btn-danger" disabled>
+                      SOLD OUT
+                    </button>
+                  )
+                }
               </div>
             </div>
           </div>
