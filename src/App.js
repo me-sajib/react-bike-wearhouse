@@ -11,6 +11,7 @@ import UserItems from "./Pages/UserItem/UserItems";
 import PrivateAuth from "./Pages/PrivateAuth/PrivateAuth";
 import Registration from "./Pages/Registration/Registration";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Blogs from "./Pages/Blogs/Blogs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route
           path="/checkItem/:id"
           element={
