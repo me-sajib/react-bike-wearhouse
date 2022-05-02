@@ -5,6 +5,7 @@ import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -18,6 +19,8 @@ const Registration = () => {
   // email and password for sign up state
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  // update user name
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   // send email verification to user
   const [sendEmailVerification, sending] = useSendEmailVerification(auth);
   const navigate = useNavigate();
@@ -47,6 +50,7 @@ const Registration = () => {
     // email verification link send
 
     await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
     await sendEmailVerification();
     const { data } = await axios.post("http://localhost:5000/addToken", {
       email,
