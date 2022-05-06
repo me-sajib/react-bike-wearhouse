@@ -1,5 +1,5 @@
 # Body Builder
-### There are many types of motorbikes, one can add and delete products if one wants, and one can change the quantity of motorbikes if one wants.
+### There are many types of motorbikes, if you wants you can add and delete any bike, and you can change the quantity of motorbikes .
 ## Live website
 https://wear-house.web.app/
 
