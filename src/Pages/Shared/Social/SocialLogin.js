@@ -1,22 +1,30 @@
 import React, { useEffect } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGoogle,
+  useSignInWithGithub,
+} from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Spinner from "../Spinner";
 import "./css/SocialLogin.css";
 
 const SocialLogin = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [signInWithGoogle, googleUser, loading, error] =
-    useSignInWithGoogle(auth);
-  let from = location.state?.from?.pathname || "/";
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, loadingGithub, errorGithub] =
+    useSignInWithGithub(auth);
 
+  // get the location from react-router-dom
+  // navigate to the page
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+  // navigate to the page from where user came
   useEffect(() => {
-    if (googleUser) {
+    if (user) {
       navigate(from, { replace: true });
     }
-  }, [googleUser]);
+  }, [user]);
 
   return (
     <div className="text-light pt-5">
@@ -28,13 +36,12 @@ const SocialLogin = () => {
           <div className="hr-row mt-3"></div>
         </div>
 
-        {
-          // if loading show spinner
-          loading && <Spinner />
-
-          /* social button */
-        }
+        {/* social button */}
         <div className="d-flex py-5 justify-content-center">
+          {
+            // if loading show spinner
+            loading || loadingGithub ? <Spinner /> : ""
+          }
           <div className="mx-2">
             <button
               className="btn btn-primary"
@@ -44,7 +51,7 @@ const SocialLogin = () => {
             </button>
           </div>
           <div className="mx-2">
-            <button className="btn btn-info">
+            <button className="btn btn-info" onClick={() => signInWithGithub()}>
               <i className="fa-brands fa-github"></i>
             </button>
           </div>
