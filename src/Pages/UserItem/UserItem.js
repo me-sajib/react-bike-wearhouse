@@ -22,7 +22,7 @@ const UserItem = ({ item, deleteItem }) => {
           </p>
           {/* delete item button */}
           <button className="btn btn-danger" onClick={() => deleteItem(_id)}>
-            DELETE
+            <i className="fa-solid fa-trash-can"></i>
           </button>
         </div>
       </div>
