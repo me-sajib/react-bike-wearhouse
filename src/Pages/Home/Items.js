@@ -35,7 +35,7 @@ const Items = () => {
           ))}
         </div>
 
-        <Link to="/inventory" className="btn btn-primary">
+        <Link to="/inventory" className="btn btn-link">
           Manage Inventories
         </Link>
       </div>
