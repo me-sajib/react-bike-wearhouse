@@ -8,7 +8,7 @@ const Item = ({ item }) => {
   return (
     <div
       className="col text-light"
-      data-aos="fade-right"
+      data-aos="zoom-in-up"
       data-aos-duration="2000"
     >
       <div className="card">
