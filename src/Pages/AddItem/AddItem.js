@@ -132,7 +132,7 @@ const AddItem = () => {
             />
           </div>
           <button className="btn btn-primary">
-            ADD ITEM <i class="fa-solid fa-circle-plus"></i>
+            ADD ITEM <i className="fa-solid fa-circle-plus"></i>
           </button>
         </form>
       </div>
