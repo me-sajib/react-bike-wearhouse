@@ -43,7 +43,7 @@ const Nav = () => {
                 <>
                   <li className="nav-item">
                     <Link to="/inventory" className="nav-link">
-                      MANAGE INVENTORY
+                      MANAGE ITEM
                     </Link>
                   </li>
                   <li className="nav-item">
