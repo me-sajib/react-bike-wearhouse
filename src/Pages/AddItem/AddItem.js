@@ -60,7 +60,7 @@ const AddItem = () => {
     <div className="bg-dark text-light py-5 light-border">
       <div className="container">
         <h2 className="text-center text-primary py-3">ADD ITEM</h2>
-        <form onSubmit={addBike}>
+        <form onSubmit={addBike} className="form-user">
           <div className="form-group mb-3">
             <label htmlFor="nameInput">Name</label>
             <input
