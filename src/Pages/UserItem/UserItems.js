@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Spinner from "../Shared/Spinner";
 import "./css/UserItem.css";
@@ -11,6 +12,14 @@ const MyItem = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  // if no user found
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user]);
 
   //   load my item
   useEffect(() => {
