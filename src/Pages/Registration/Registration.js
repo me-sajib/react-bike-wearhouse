@@ -80,9 +80,9 @@ const Registration = () => {
           <div className="form-holder">
             <div className="form-content">
               <div className="form-items py-5">
-                <h3 className="text-white pb-3">Registration</h3>
+                <h3 className="text-white pb-3 text-center">Registration</h3>
                 <form
-                  className="requires-validation"
+                  className="requires-validation form-user"
                   onSubmit={registrationUser}
                 >
                   <div className="col-md-12 mb-3">
