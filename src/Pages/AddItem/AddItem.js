@@ -131,7 +131,9 @@ const AddItem = () => {
               placeholder="Enter item supplier name"
             />
           </div>
-          <button className="btn btn-primary">ADD ITEM</button>
+          <button className="btn btn-primary">
+            ADD ITEM <i class="fa-solid fa-circle-plus"></i>
+          </button>
         </form>
       </div>
     </div>
