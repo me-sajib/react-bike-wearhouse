@@ -16,6 +16,7 @@ const Items = () => {
       });
     setLoading(false);
   }, []);
+
   return (
     <div className="items bg-dark py-5">
       <div className="container">
