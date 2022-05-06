@@ -14,7 +14,6 @@ import "./css/Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
 
-  const [alreadyUser] = useAuthState(auth);
   // sign in email and password state
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -43,12 +42,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (alreadyUser) {
-      navigate("/");
-    }
-  }, [alreadyUser]);
-
-  useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
@@ -58,7 +51,7 @@ const Login = () => {
     <div className="bg-dark form-body light-border">
       <div className=" container">
         <div className="row w-75 mx-auto py-5">
-          <h3 className="text-white pb-3">
+          <h3 className="text-white pb-3 text-center">
             WELCOME BACK, <b className="text-primary">PLEASE LOGIN</b>
           </h3>
           <form className="form-user" onSubmit={loginUser}>
