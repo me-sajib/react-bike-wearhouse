@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/Inventory.css";
+import "./css/InventoryItem.css";
 
 const InventoryItem = ({ item, id, deleteItem }) => {
   const { name, price, supplier, quantity, _id } = item;
