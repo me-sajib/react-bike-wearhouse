@@ -1,10 +1,18 @@
 import React from "react";
 
-const Team = () => {
+const Team = ({ team }) => {
+  const { name, position, img, details } = team;
   return (
-    <div className="bg-dark light-border">
-      <div className="container py-5">
-        <h1 className="text-center py-3">Team</h1>
+    <div className="col">
+      <div className="team">
+        <div className="img">
+          <img src={img} className="img-fluid" alt="" />
+        </div>
+        <div className="details">
+          <h1 className="name">{name}</h1>
+          <h3 className="position">{position}</h3>
+          <p className="details pt-2">{details}</p>
+        </div>
       </div>
     </div>
   );
