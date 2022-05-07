@@ -54,7 +54,6 @@ const ManageInventory = () => {
               <th scope="col">#</th>
               <th scope="col">NAME</th>
               <th scope="col">PRICE</th>
-              <th scope="col">SUPPLIER</th>
               <th scope="col">action</th>
             </tr>
           </thead>
