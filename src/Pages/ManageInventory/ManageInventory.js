@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Spinner from "../Shared/Spinner";
-import Inventory from "./Inventory";
+import InventoryItem from "./InventoryItem";
 
 const ManageInventory = () => {
   const [items, setItems] = useState([]);
@@ -54,6 +54,7 @@ const ManageInventory = () => {
               <th scope="col">#</th>
               <th scope="col">NAME</th>
               <th scope="col">PRICE</th>
+              <th scope="col">SUPPLIER</th>
               <th scope="col">action</th>
             </tr>
           </thead>
@@ -61,7 +62,7 @@ const ManageInventory = () => {
             {
               //    show all inventory
               items.map((item) => (
-                <Inventory
+                <InventoryItem
                   key={item._id}
                   id={id++}
                   deleteItem={deleteItem}
