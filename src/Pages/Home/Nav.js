@@ -39,6 +39,11 @@ const Nav = () => {
                   BLOGS
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/team" className="nav-link">
+                  OUR TEAM
+                </Link>
+              </li>
               {user ? (
                 <>
                   <li className="nav-item">
