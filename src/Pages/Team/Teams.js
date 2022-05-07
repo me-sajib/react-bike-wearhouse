@@ -7,7 +7,9 @@ const Teams = () => {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/teams").then((res) => setTeams(res.data));
+    axios
+      .get("https://young-springs-26281.herokuapp.com/teams")
+      .then((res) => setTeams(res.data));
   }, []);
   return (
     <div className="bg-dark light-border">
