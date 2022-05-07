@@ -27,7 +27,7 @@ const Item = ({ item }) => {
           <p className="cart-text">
             <b>Quantity:</b> {quantity}
           </p>
-          <Link to={`/checkItem/${_id}`} className="btn btn-primary">
+          <Link to={`/inventory/${_id}`} className="btn btn-primary">
             STOCK UPDATE
           </Link>
         </div>
