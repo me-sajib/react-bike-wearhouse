@@ -22,6 +22,8 @@ https://wear-house.web.app/
 - CSS 3
 - BOOTSTRAP 5
 - REACT JS
+- AXIOS API
+- FETCH API
 - TOASTIFY ALERT
 - FONT AWESOME
 
