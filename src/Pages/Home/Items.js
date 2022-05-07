@@ -13,8 +13,8 @@ const Items = () => {
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
+        setLoading(false);
       });
-    setLoading(false);
   }, []);
 
   return (
@@ -24,12 +24,12 @@ const Items = () => {
         <div className="text-center text-light py-2">
           <span>DISCOVER THE</span>
           <h1>BEST BIKE</h1>
+          {/* spinner show */}
+          {loading && <Spinner />}
         </div>
 
         {/* show the all items */}
         <div className="row row-cols-1 my-5 row-cols-md-2 g-4">
-          {/* spinner show */}
-          {loading && <Spinner />}
           {items.map((item) => (
             <Item key={item._id} item={item} />
           ))}
