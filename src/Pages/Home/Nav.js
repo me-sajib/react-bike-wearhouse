@@ -48,12 +48,12 @@ const Nav = () => {
                 <>
                   <li className="nav-item">
                     <Link to="/inventory" className="nav-link">
-                      MANAGE ITEM
+                      MANAGE ITEMS
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to="/myItem" className="nav-link">
-                      MY ITEM
+                      MY ITEMS
                     </Link>
                   </li>
                   <li className="nav-item">
