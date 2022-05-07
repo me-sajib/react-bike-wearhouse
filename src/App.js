@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddItem from "./Pages/AddItem/AddItem";
 import Home from "./Pages/Home/Home";
-import CheckItem from "./Pages/Home/CheckItem/CheckItem";
 import Nav from "./Pages/Home/Nav";
 import Login from "./Pages/Login/Login";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
@@ -14,6 +13,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Blogs from "./Pages/Blogs/Blogs";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Teams from "./Pages/Team/Teams";
+import Inventory from "./Pages/Inventory/Inventory";
 
 function App() {
   return (
@@ -23,10 +23,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route
-          path="/checkItem/:id"
+          path="/inventory/:id"
           element={
             <PrivateAuth>
-              <CheckItem />
+              <Inventory />
             </PrivateAuth>
           }
         />
