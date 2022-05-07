@@ -4,7 +4,7 @@ const Team = ({ team }) => {
   const { name, position, img, details } = team;
   return (
     <div className="col">
-      <div className="team">
+      <div className="team" data-aos="fade-up" data-aos-duration="1000">
         <div className="img">
           <img src={img} className="img-fluid" alt="" />
         </div>
