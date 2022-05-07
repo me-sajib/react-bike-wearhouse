@@ -12,6 +12,7 @@ import PrivateAuth from "./Pages/PrivateAuth/PrivateAuth";
 import Registration from "./Pages/Registration/Registration";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Blogs from "./Pages/Blogs/Blogs";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         <Route path="/inventory" element={<ManageInventory />} />
         <Route path="/addItem" element={<AddItem />} />
         <Route path="/myItem" element={<UserItems />} />
-        <Route path="*" element={<div>Not Found</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
       <Footer />
