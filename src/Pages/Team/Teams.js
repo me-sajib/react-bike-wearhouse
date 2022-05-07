@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Spinner from "../Shared/Spinner";
 import team from "./images/team.jpg";
 import Team from "./Team";
 import "./Team.css";
 const Teams = () => {
   const [teams, setTeams] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    axios
-      .get("https://young-springs-26281.herokuapp.com/teams")
-      .then((res) => setTeams(res.data));
+    axios.get("https://young-springs-26281.herokuapp.com/teams").then((res) => {
+      setTeams(res.data);
+      setLoading(false);
+    });
   }, []);
   return (
     <div className="bg-dark light-border">
@@ -29,6 +31,10 @@ const Teams = () => {
             <Team key={team._id} team={team} />
           ))}
         </div>
+        {
+          // if loading is true show loading
+          loading && <Spinner />
+        }
       </div>
     </div>
   );
