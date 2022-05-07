@@ -1,14 +1,14 @@
 import React from "react";
 import "./css/Inventory.css";
 
-const Inventory = ({ item, id, deleteItem }) => {
-  const { name, price, _id } = item;
+const InventoryItem = ({ item, id, deleteItem }) => {
+  const { name, price, supplier, quantity, _id } = item;
   return (
     <tr>
       <th scope="row">{id++}</th>
       <td>{name}</td>
       <td>{price}</td>
-
+      <td>{supplier}</td>
       <td>
         <button className="btn btn-danger" onClick={() => deleteItem(_id)}>
           {" "}
@@ -19,4 +19,4 @@ const Inventory = ({ item, id, deleteItem }) => {
   );
 };
 
-export default Inventory;
+export default InventoryItem;
