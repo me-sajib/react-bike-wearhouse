@@ -13,6 +13,7 @@ import Registration from "./Pages/Registration/Registration";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Blogs from "./Pages/Blogs/Blogs";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
+import Team from "./Pages/Team/Team";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             </PrivateAuth>
           }
         />
+        <Route path="/team" element={<Team />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/inventory" element={<ManageInventory />} />
