@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
-import auth from "../../../firebase.init";
-import Spinner from "../../Shared/Spinner";
-import "./css/CheckItem.css";
+import auth from "../../firebase.init";
+import Spinner from "../Shared/Spinner";
+import "./css/Inventory.css";
 
-const CheckItem = () => {
+const Inventory = () => {
   const [user, loadings] = useAuthState(auth);
   const { id } = useParams();
   const [item, setItem] = useState([]);
@@ -163,4 +163,4 @@ const CheckItem = () => {
   );
 };
 
-export default CheckItem;
+export default Inventory;
